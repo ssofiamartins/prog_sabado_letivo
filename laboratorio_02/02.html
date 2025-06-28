@@ -24,11 +24,35 @@
     */
 
     //ENTRADA
-
+    const peso = Number(prompt(`Informe o peso do produto (em kg)`));
+    const regiao = (prompt(`Informe a região de entrega ((L)local, (R)regional ou (N)nacional)`));
 
     //PROCESSAMENTO
+    const local = (peso * 2) + 7;
+    const regional = (peso * 2) + 10;
+    const nacional = (peso * 2) + 15;
+    const descLocal = local - 3;
+    const descRegional = regional - 3;
+    const descNacional = nacional - 3;
 
-
+    if (regiao === "L" && peso > 10) {
+        alert(`O custo total do envio é de R$${descLocal.toFixed(2)}`);
+    } 
+    else if (regiao === "L" && peso <= 10) {
+        alert(`O custo total do envio é R$${local.toFixed(2)}`);
+    }
+    else if (regiao === "R" && peso > 10) {
+        alert(`O custo total do envio é de R$${descRegional.toFixed(2)}`);
+    }
+    else if (regiao === "R" && peso <= 10) {
+        alert(`O custo total do envio é de R$${regional.toFixed(2)}`);
+    }
+    else if (regiao === "N" && peso > 10) {
+        alert(`O custo total do envio é de R$${descNacional.toFixed(2)}`)
+    }
+    else {
+        alert(`O custo total do envio é de R$${nacional.toFixed(2)}`);
+    }
     //SAÍDA
     
 </script>

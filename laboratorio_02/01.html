@@ -3,7 +3,8 @@
     PROBLEMA: SIMULAÇÃO DE ANÁLISE DE CRÉDITO
     Problema: Simulação de Análise de Crédito
 
-    Crie um programa que simula um sistema de análise de crédito simplificado. O sistema deve solicitar três informações do cliente e decidir se o crédito será aprovado ou não.
+    Crie um programa que simula um sistema de análise de crédito simplificado.
+     O sistema deve solicitar três informações do cliente e decidir se o crédito será aprovado ou não.
 
     **Regras para Aprovação (TODAS devem ser verdadeiras):**
     1. O cliente deve ser maior de idade (idade >= 18).
@@ -19,10 +20,14 @@
     */
 
     //ENTRADA
-
+    const idade = Number(prompt(`Informe a sua idade`));
+    const renda = Number(prompt(`Informe a sua renda mensal`));
+    const restricao = (prompt(`informe se você tem restrições no nome (Sim ou Não)`));
 
     //PROCESSAMENTO
-
+    (idade >= 18 && renda > 2500.00 && restricao === "Não") ?
+        alert(`Crédito Aprovado!`) :
+        alert(`Crédito Reprovado!`);
 
     //SAÍDA
     

@@ -28,11 +28,61 @@
     */
 
     //ENTRADA
-
+    const salarioAtual = Number(prompt(`Informe seu salário atual`));
+    const tempoCasa = Number(prompt(`Informe o seu tempo de casa`));
+    const notaDesempenho = Number(prompt(`Informe a nota de desempenho (0 a 10)`));
 
     //PROCESSAMENTO
-
-
+    if (tempoCasa < 1) {
+        if (notaDesempenho < 7) {
+            alert(`Você não recebeu bonificação`);
+        }
+        else if (notaDesempenho >= 7 && notaDesempenho <= 8.9) {
+            const bonusUm = (salarioAtual * 5 / 100);
+            alert(`Sua bonificação total é de R$${bonusUm.toFixed(2)}`);
+        }
+        else if (notaDesempenho >= 9 && notaDesempenho <= 10) {
+            const bonusDois = (salarioAtual * 10 / 100);
+            alert(`Sua bonificação total é de R$${bonusDois.toFixed(2)}`);
+        }
+        else {
+            alert(`Nota inválida!`)
+        }
+    }
+    else if (tempoCasa >= 1 && tempoCasa <= 5) {
+        if (notaDesempenho < 7) {
+            const bonusUm = (salarioAtual * 5 / 100);
+            alert(`Sua bonificação total é de R$${bonusUm.toFixed(2)}`);
+        }
+        else if (notaDesempenho >= 7 && notaDesempenho <= 8.9) {
+            const bonusDois = (salarioAtual * 10 / 100);
+            alert(`Sua bonificação total é de R$${bonusDois.toFixed(2)}`);
+        }
+        else if (notaDesempenho >= 9 && notaDesempenho <= 10) {
+            const bonusTres = (salarioAtual * 15 / 100);
+            alert(`Sua bonificação total é de R$${bonusTres.toFixed(2)}`);
+        }
+        else {
+            alert(`Nota inválida!`)
+        }
+    }
+    else {
+        if (notaDesempenho < 7) {
+            const bonusUm = (salarioAtual * 10 / 100);
+            alert(`Sua bonificação total é de R$${bonusUm.toFixed(2)}`);
+        }
+        else if (notaDesempenho >= 7 && notaDesempenho <= 8.9) {
+            const bonusDois = (salarioAtual * 15 / 100);
+            alert(`Sua bonificação total é de R$${bonusDois.toFixed(2)}`);
+        }
+        else if (notaDesempenho >= 9 && notaDesempenho <= 10) {
+            const bonusTres = (salarioAtual * 20 / 100);
+            alert(`Sua bonificação total é de R$${bonusTres.toFixed(2)}`);
+        }
+        else {
+            alert(`Nota inválida!`)
+        }
+    }
     //SAÍDA
-    
+
 </script>

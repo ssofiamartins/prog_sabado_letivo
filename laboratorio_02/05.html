@@ -3,7 +3,8 @@
     PROBLEMA 5: CALCULADORA DE CUSTO DE HOSPEDAGEM
 
     **Descrição do Problema:**
-    Você foi contratado para criar um sistema para uma pequena pousada. O programa deve calcular o custo total da hospedagem de um cliente com base no tipo de quarto escolhido e na quantidade de noites.
+    Você foi contratado para criar um sistema para uma pequena pousada. O programa deve calcular o 
+    custo total da hospedagem de um cliente com base no tipo de quarto escolhido e na quantidade de noites.
 
     A pousada oferece três tipos de quartos com os seguintes preços por noite:
     - **Simples:** R$ 150,00
@@ -14,15 +15,69 @@
     - Para estadias de **5 a 9 noites**, o cliente recebe **10% de desconto** sobre o valor total.
     - Para estadias de **10 noites ou mais**, o cliente recebe **15% de desconto** sobre o valor total.
 
-    Seu programa deve solicitar ao usuário o tipo de quarto (como texto: "Simples", "Duplo" ou "Suíte") e a quantidade de noites. Em seguida, deve calcular e exibir o custo final da hospedagem, já com o desconto aplicado, se houver. Caso o usuário digite um tipo de quarto inválido, exiba uma mensagem de erro.
+    Seu programa deve solicitar ao usuário o tipo de quarto (como texto: "Simples", "Duplo" ou "Suíte") 
+    e a quantidade de noites. Em seguida, deve calcular e exibir o custo final da hospedagem, 
+    já com o desconto aplicado, se houver. Caso o usuário digite um tipo de quarto inválido, 
+    exiba uma mensagem de erro.
     */
 
     //ENTRADA
-
+    const tipoQuarto = prompt(`Informe o tipo de quarto que vocẽ irá se hospedar: (S) - simples, (D) - duplo, (ST) - suíte `).toUpperCase().trim();
+    const noites = Number(prompt(`Informe quantas noites você irá se hospedar:`));
 
     //PROCESSAMENTO
+    const valorS = noites * 150;
+    const valorD = noites * 250;
+    const valorST = noites * 400;
 
-
+    if (tipoQuarto === "S") {
+        if ( noites > 0 && noites < 5 ) {
+            alert(`O custo final da hospedagem será de R$ ${valorS.toFixed(2)}`);
+        }
+        else if ( noites >= 5 && noites <= 9) {
+            const valorDois = valorS - (valorS * 10 /100);   
+            alert(`O custo final da hospedagem será de R$ ${valorDois.toFixed(2)}`);
+        }
+        else if ( noites >= 10 ) {
+            const valorTres = valorS - (valorS * 15 / 100);
+            alert(`O custo final da hospedagem será de R$ ${valorTres.toFixed(2)}`);
+        }
+        else {
+            alert(`Tipo de quarto inválido`);
+        }
+    }
+    else if (tipoQuarto === "D") {
+        if ( noites > 0 && noites < 5 ) {
+            alert(`O custo final da hospedagem será de R$ ${valorD.toFixed(2)}`);
+        }
+        else if ( noites >= 5 && noites <= 9) {
+            const valorDois = valorD - (valorD * 10 /100);   
+            alert(`O custo final da hospedagem será de R$ ${valorDois.toFixed(2)}`);
+        }
+        else if ( noites >= 10 ) {
+            const valorTres = valorD - (valorD * 15 / 100);
+            alert(`O custo final da hospedagem será de R$ ${valorTres.toFixed(2)}`);
+        }
+        else {
+            alert(`Tipo de quarto inválido`);
+        }
+    }
+    else  {
+        if ( noites > 0 && noites < 5 ) {
+            alert(`O custo final da hospedagem será de R$ ${valorST.toFixed(2)}`);
+        }
+        else if ( noites >= 5 && noites <= 9) {
+            const valorDois = valorST - (valorST * 10 /100);   
+            alert(`O custo final da hospedagem será de R$ ${valorDois.toFixed(2)}`);
+        }
+        else if ( noites >= 10 ) {
+            const valorTres = valorST - (valorST * 15 / 100);
+            alert(`O custo final da hospedagem será de R$ ${valorTres.toFixed(2)}`);
+        }
+        else {
+            alert(`Tipo de quarto inválido`);
+        }
+    }
     //SAÍDA
 
 </script>
